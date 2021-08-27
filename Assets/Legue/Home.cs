@@ -16,4 +16,8 @@ public class Home : MonoBehaviour
     {
         Application.Quit();
     }
+   public void Shop(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
 }

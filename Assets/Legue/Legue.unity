@@ -270,6 +270,10 @@ MonoBehaviour:
   screenHalfWidthInWorldUnit: 0
   ob1: {fileID: 236025281}
   ob2: {fileID: 212332910}
+  colors:
+  - {r: 0.2735849, g: 0.009033469, b: 0.009033469, a: 1}
+  - {r: 1, g: 0.9815198, b: 0, a: 1}
+  - {r: 1, g: 0.037245974, b: 0, a: 1}
 --- !u!61 &152760615
 BoxCollider2D:
   m_ObjectHideFlags: 0

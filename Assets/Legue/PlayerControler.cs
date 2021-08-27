@@ -14,8 +14,12 @@ public class PlayerControler : MonoBehaviour
 
     int lastScore;
 
+    public Color[] colors;
+
     void Start()
     {
+        int selectedIndex = PlayerPrefs.GetInt("usedIndex");
+        GetComponent<MeshRenderer>().material.color = colors[selectedIndex];
         lastScore = PlayerPrefs.GetInt("score");
         MenuUI.menuUI.SetHighScore(lastScore);
 
