@@ -711,7 +711,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8203244957784396643, guid: 47e577522bf56cc4d936881c657de992,
     type: 3}
   blocksParent: {fileID: 6020296}
-  secondsBetweenSpawnsMinMax: {x: 0.5, y: 1.5}
+  secondsBetweenSpawnsMinMax: {x: 0.5, y: 2}
   spawnSizeMinMax: {x: 0.5, y: 2.2}
   spawanAngleMax: 15
 --- !u!4 &215547568
