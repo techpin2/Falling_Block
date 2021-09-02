@@ -3,7 +3,12 @@ guid: f27ff0e30af5f1f4098946929d476682
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fallingBlockPrefab: {fileID: 8203244957784396643, guid: 5af4613c5b9f9fa43877e344e3f51dcc,
+      type: 3}
+  - enemyPrefab: {fileID: 8203244957784396643, guid: 47e577522bf56cc4d936881c657de992,
+      type: 3}
+  - blocksParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
