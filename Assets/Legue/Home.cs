@@ -10,14 +10,21 @@ public class Home : MonoBehaviour
     public void StartButton(int index)
     {
         SceneManager.LoadScene(index);
-        homeScreen.SetActive(false);
     }
     public void ExitButton()
     {
+        print("Exit called");
         Application.Quit();
     }
    public void Shop(int index)
     {
         SceneManager.LoadScene(index);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ExitButton();
+    }
+
 }
