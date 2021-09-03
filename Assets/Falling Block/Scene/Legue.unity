@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6020296}
   m_Layer: 0
-  m_Name: BloksParent
+  m_Name: BlocksParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 163068356}
   - component: {fileID: 163068355}
   m_Layer: 5
-  m_Name: Home Button
+  m_Name: HomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 215547568}
   - component: {fileID: 215547567}
   m_Layer: 0
-  m_Name: Spawn Manager
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1142,12 +1142,12 @@ GameObject:
   - component: {fileID: 445206120}
   - component: {fileID: 445206119}
   m_Layer: 5
-  m_Name: Game Over Panel
+  m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &445206118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 748928442}
   - component: {fileID: 748928441}
   m_Layer: 0
-  m_Name: Menuui
+  m_Name: MenuUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 1022342971}
   - component: {fileID: 1022342970}
   m_Layer: 5
-  m_Name: Restart Button
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1885,7 @@ GameObject:
   - component: {fileID: 1727629613}
   - component: {fileID: 1727629612}
   m_Layer: 0
-  m_Name: Dificulty
+  m_Name: Difficullty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2005,7 +2005,7 @@ GameObject:
   - component: {fileID: 1851288340}
   - component: {fileID: 1851288339}
   m_Layer: 5
-  m_Name: Score
+  m_Name: CurrentScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
