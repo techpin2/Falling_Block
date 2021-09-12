@@ -13,17 +13,13 @@ public class PlayerControler : MonoBehaviour
     private int score;
 
     int lastScore;
-
-    public Color[] colors;
+    public Color selectedColor;
 
     void Start()
     {
-        int selectedIndex = PlayerPrefs.GetInt("usedIndex");
-        float color =float.Parse(PlayerPrefs.GetString("color"));
+       selectedColor= ColorHandler.GetColorFromString(PlayerPrefs.GetString("color"));
+        GetComponent<MeshRenderer>().material.color = selectedColor;
 
-        Color c;
-        ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("color"),out c);
-        GetComponent<MeshRenderer>().material.color = c;
         lastScore = PlayerPrefs.GetInt("score");
         MenuUI.menuUI.SetHighScore(lastScore);
 
@@ -96,6 +92,7 @@ public class PlayerControler : MonoBehaviour
 
             if(lastScore<score)
                 PlayerPrefs.SetInt("score", score);
+            AdManager.adManager.ShowAd(AdsType.Interstitial);
         }
 
     }

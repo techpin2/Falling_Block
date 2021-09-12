@@ -1,0 +1,19 @@
+{
+    "name": "GoogleMobileAds.Editor",
+    "references": [
+        "GoogleMobileAds",
+        "GoogleMobileAds.Core"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

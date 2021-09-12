@@ -7,6 +7,11 @@ public class Home : MonoBehaviour
 {
     public GameObject homeScreen;
 
+    private void Start()
+    {
+        AdManager.adManager.ShowAd(AdsType.Banner);
+    }
+
     public void StartButton(int index)
     {
         SceneManager.LoadScene(index);

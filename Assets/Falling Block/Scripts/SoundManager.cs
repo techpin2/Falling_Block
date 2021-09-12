@@ -14,19 +14,10 @@ public class SoundManager : MonoBehaviour
         {
             soundManager = this;
             DontDestroyOnLoad(this.gameObject);
-            print("Sound Manager Initialized");
         }
         else
         {
-            if (soundManager != this)
-            {
-                Destroy(this.gameObject);
-                print("Sound Manager Already Exist");
-            }
-            else
-            {
-                print("Instance Already found");
-            }
+            Destroy(gameObject);
         }
     }
 

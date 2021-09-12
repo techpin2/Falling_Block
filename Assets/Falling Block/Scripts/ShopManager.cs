@@ -17,6 +17,7 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        AdManager.adManager.ShowAd(AdsType.Banner);
         PlayerPrefs.SetInt("score", 500);
         totalscore = PlayerPrefs.GetInt("score");
         print(totalscore);
@@ -88,8 +89,8 @@ public class ShopManager : MonoBehaviour
         int usedIndex = PlayerPrefs.GetInt("usedIndex");
         ResetValue(usedIndex, "Use", purchasedColor);
 
-        PlayerPrefs.SetInt("usedIndex", i);
-        PlayerPrefs.SetString("color",ColorUtility.ToHtmlStringRGBA(colors[i].color));
+        string selectedColor = ColorHandler.GetStringFromColor(colors[i].color,false);
+        PlayerPrefs.SetString("color",selectedColor);
         ResetValue(i, "Used", usedColor);
     }
 
