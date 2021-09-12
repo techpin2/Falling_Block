@@ -19,7 +19,11 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         int selectedIndex = PlayerPrefs.GetInt("usedIndex");
-        GetComponent<MeshRenderer>().material.color = colors[selectedIndex];
+        float color =float.Parse(PlayerPrefs.GetString("color"));
+
+        Color c;
+        ColorUtility.TryParseHtmlString(PlayerPrefs.GetString("color"),out c);
+        GetComponent<MeshRenderer>().material.color = c;
         lastScore = PlayerPrefs.GetInt("score");
         MenuUI.menuUI.SetHighScore(lastScore);
 
@@ -79,10 +83,12 @@ public class PlayerControler : MonoBehaviour
         {
             Destroy(collision.gameObject);
             AddScore();
+            SoundManager.soundManager.PlayAudio(SoundType.COLLECT);
         }
 
         if (collision.gameObject.tag == "Enemy Block")
         {
+            SoundManager.soundManager.PlayAudio(SoundType.GAMEOVER);
             Destroy(gameObject);
             MenuUI.menuUI.gameOverScreen.SetActive(true);
             MenuUI.menuUI.buttonScreen.SetActive(false);

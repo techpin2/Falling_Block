@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour
 {
+    public Color defaultColor;
+    public Color purchasedColor;
+    public Color usedColor;
+    public GameObject notEnoughCoins;
     public GameObject colorPrefab;
     public Transform contentPanel;
     public Buy[] colors;
@@ -28,13 +32,13 @@ public class ShopManager : MonoBehaviour
                 {
                     int usedIndex = PlayerPrefs.GetInt("usedIndex");
                     if (i == usedIndex)
-                        ResetValue(usedIndex, "Used", Color.grey);
+                        ResetValue(usedIndex, "Used", usedColor);
                     else
-                        ResetValue(i, "Use", Color.green);
+                        ResetValue(i, "Use", purchasedColor);
                 }
                 else
                 {
-                    ResetValue(i, "Use", Color.green);
+                    ResetValue(i, "Use", purchasedColor);
                 }
                 int t = i;
                 obj.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
@@ -44,6 +48,7 @@ public class ShopManager : MonoBehaviour
             }
             else
             {
+                ResetValue(i, "Buy", defaultColor);
                 obj.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = colors[i].price + "Buy";
                 int t = i;
                 obj.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
@@ -64,7 +69,7 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.SetInt("score", (int)totalscore);
             PlayerPrefs.SetInt(i + "itemPurchase", i);
             print("SuccessFully Purchase");
-
+            ResetValue(i, "Use", purchasedColor);
             GameObject obj = contentPanel.GetChild(i).gameObject;
             obj.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = "Use";
             Button btn = obj.transform.GetChild(0).GetComponent<Button>();
@@ -74,16 +79,18 @@ public class ShopManager : MonoBehaviour
         else
         {
             print("Insufficient Coins");
+            notEnoughCoins.SetActive(true);
         }
     }
 
     public void Use(int i)
     {
         int usedIndex = PlayerPrefs.GetInt("usedIndex");
-        ResetValue(usedIndex, "Use", Color.green);
+        ResetValue(usedIndex, "Use", purchasedColor);
 
         PlayerPrefs.SetInt("usedIndex", i);
-        ResetValue(i, "Used", Color.grey);
+        PlayerPrefs.SetString("color",ColorUtility.ToHtmlStringRGBA(colors[i].color));
+        ResetValue(i, "Used", usedColor);
     }
 
     private void ResetValue(int index, string str, Color color)
