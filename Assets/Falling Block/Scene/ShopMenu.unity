@@ -505,41 +505,41 @@ MonoBehaviour:
   - color: {r: 0.9888284, g: 1, b: 0, a: 1}
     price: 10
   - color: {r: 1, g: 0, b: 0.5240722, a: 1}
-    price: 30
+    price: 10
   - color: {r: 0.24444532, g: 0, b: 1, a: 1}
-    price: 30
+    price: 15
   - color: {r: 0, g: 0.40715814, b: 1, a: 1}
-    price: 30
+    price: 20
   - color: {r: 0, g: 0.82566833, b: 1, a: 1}
-    price: 30
+    price: 15
   - color: {r: 0.16420436, g: 0.7735849, b: 0.7189059, a: 1}
-    price: 30
+    price: 5
   - color: {r: 0, g: 1, b: 0.52991295, a: 1}
-    price: 30
+    price: 27
   - color: {r: 0, g: 1, b: 0.20616484, a: 1}
     price: 30
   - color: {r: 0.44477618, g: 1, b: 0, a: 1}
-    price: 30
+    price: 22
   - color: {r: 0.076317206, g: 0.3301887, b: 0.30541077, a: 1}
     price: 30
   - color: {r: 1, g: 0.91280603, b: 0, a: 1}
     price: 30
   - color: {r: 1, g: 0, b: 0.06844187, a: 1}
-    price: 30
+    price: 25
   - color: {r: 0.735849, g: 0.496351, b: 0.61422575, a: 1}
     price: 30
   - color: {r: 1, g: 1, b: 1, a: 1}
-    price: 30
+    price: 35
   - color: {r: 0.23279664, g: 0.4339623, b: 0.18627627, a: 1}
-    price: 30
+    price: 14
   - color: {r: 0.4245283, g: 0.08120693, b: 0.07008721, a: 1}
-    price: 30
+    price: 16
   - color: {r: 0.23514327, g: 0.21693662, b: 0.3679245, a: 1}
-    price: 30
+    price: 17
   - color: {r: 0.4716981, g: 0.33670858, b: 0.23807405, a: 1}
-    price: 30
+    price: 14
   - color: {r: 0.6421795, g: 0, b: 1, a: 1}
-    price: 30
+    price: 8
 --- !u!4 &638681636
 Transform:
   m_ObjectHideFlags: 0
