@@ -24,12 +24,15 @@ public class AdManager : MonoBehaviour
     private InterstitialAd InterstitialAd;
     private RewardedAd rewardedAd;
 
-    private void Start()
+    private void OnEnable()
     {
-        MobileAds.Initialize((initStatus) =>
-        {
-            print("Mobile Ads Initialized");
-        });
+        //MobileAds.Initialize((initStatus) =>
+        //{
+        //    print("Mobile Ads Initialized");
+        //});
+        RegisterBannerAds();
+        RegisterInterstitialAds();
+        RegisterRewardedAds();
     }
 
     public void ShowAd(AdsType adsType)
@@ -39,30 +42,36 @@ public class AdManager : MonoBehaviour
         switch (adsType)
         {
             case AdsType.Banner:
-                ShowBannerAds();
+                bannerView.Show();
                 break;
             case AdsType.Interstitial:
-                ShowInterstitialAds();
+                if (InterstitialAd.IsLoaded())
+                {
+                    InterstitialAd.Show();
+                }
                 break;
             case AdsType.Rewarded:
-                ShowRewardedAds();
+                if (rewardedAd.IsLoaded())
+                {
+                    rewardedAd.Show();
+                }
                 break;
         }
     }
 
-    private void ShowBannerAds()
+    private void RegisterBannerAds()
     {
         string bannerId = GetAdsKey(AdsType.Banner);
-        bannerView = new BannerView(bannerId, AdSize.Banner, AdPosition.Bottom);
+        bannerView = new BannerView(bannerId, AdSize.SmartBanner, AdPosition.Bottom);
 
         bannerView.OnAdClosed += OnAdsClose;
 
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-        //bannerView.LoadAd(adRequest);
-        bannerView.Show();
+      //  AdRequest adRequest = new AdRequest.Builder().Build();
+        AdRequest adRequest = new AdRequest.Builder().Build();
+        bannerView.LoadAd(adRequest);
     }
 
-    private void ShowInterstitialAds()
+    private void RegisterInterstitialAds()
     {
         string interstitialId = GetAdsKey(AdsType.Interstitial);
         InterstitialAd = new InterstitialAd(interstitialId);
@@ -72,10 +81,9 @@ public class AdManager : MonoBehaviour
 
         AdRequest adRequest = new AdRequest.Builder().Build();
         InterstitialAd.LoadAd(adRequest);
-        InterstitialAd.Show();
     }
 
-    private void ShowRewardedAds()
+    private void RegisterRewardedAds()
     {
         string rewardedId = GetAdsKey(AdsType.Rewarded);
         rewardedAd = new RewardedAd(rewardedId);
@@ -92,10 +100,7 @@ public class AdManager : MonoBehaviour
     #region CallBack
     private void OnRewardedAdLoaded(object sender, EventArgs ards)
     {
-        if (rewardedAd.IsLoaded())
-        {
-            rewardedAd.Show();
-        }
+       
     }
 
     private void OnAdsClose(object sender, EventArgs ards)

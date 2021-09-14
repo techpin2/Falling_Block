@@ -17,6 +17,7 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
+
        selectedColor= ColorHandler.GetColorFromString(PlayerPrefs.GetString("color"));
         GetComponent<MeshRenderer>().material.color = selectedColor;
 
