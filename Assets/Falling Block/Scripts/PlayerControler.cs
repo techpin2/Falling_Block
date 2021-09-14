@@ -17,10 +17,13 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.HasKey("color"))
+        {
 
        selectedColor= ColorHandler.GetColorFromString(PlayerPrefs.GetString("color"));
         GetComponent<MeshRenderer>().material.color = selectedColor;
 
+        }
         lastScore = PlayerPrefs.GetInt("score");
         MenuUI.menuUI.SetHighScore(lastScore);
 

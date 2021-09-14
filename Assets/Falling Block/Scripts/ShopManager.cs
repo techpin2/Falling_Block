@@ -89,6 +89,7 @@ public class ShopManager : MonoBehaviour
         int usedIndex = PlayerPrefs.GetInt("usedIndex");
         ResetValue(usedIndex, "Use", purchasedColor);
 
+        PlayerPrefs.SetInt("usedIndex", i);
         string selectedColor = ColorHandler.GetStringFromColor(colors[i].color,false);
         PlayerPrefs.SetString("color",selectedColor);
         ResetValue(i, "Used", usedColor);
