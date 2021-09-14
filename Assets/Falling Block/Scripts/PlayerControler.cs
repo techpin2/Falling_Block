@@ -93,7 +93,7 @@ public class PlayerControler : MonoBehaviour
 
             if(lastScore<score)
                 PlayerPrefs.SetInt("score", score);
-            AdManager.adManager.ShowAd(AdsType.Interstitial);
+           // AdManager.adManager.ShowAd(AdsType.Interstitial);
         }
 
     }
