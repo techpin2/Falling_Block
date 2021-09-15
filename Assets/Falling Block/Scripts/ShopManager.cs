@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         //AdManager.adManager.ShowAd(AdsType.Banner);
-        PlayerPrefs.SetInt("score", 500);
+       // PlayerPrefs.SetInt("score", 500);
         totalscore = PlayerPrefs.GetInt("score");
         print(totalscore);
         for (int i = 0; i < colors.Length; i++)
